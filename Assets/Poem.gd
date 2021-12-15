@@ -13,6 +13,9 @@ var lines_rule = 5
 var words_per_line = [5, 5, 5, 5, 5]
 var expression_rule = null  # Special regexp rule (if regexp possible)
 var letters_rule = {'y': 15}  # amount of specific letter to find in text
+var haiku_rule = false  # Write a haiku (17 syllables in 3 rows, 5-7-5)
+
+# Other params
 var energy = 10  # Can type as long as there is energy
 var demo_energy_timer = 1.0
 
@@ -91,9 +94,8 @@ func _check_completion():
 			for key in letters_rule.keys():
 				found_keys[key] = 0
 				for character in text_edit.text:
-					if character == key:
+					if character.lowercase() == key:
 						found_keys[key] += 1
-			print(found_keys)
 			# Check that we have enough letters of each type
 			for key in letters_rule.keys():
 				if found_keys[key] < letters_rule[key]:
