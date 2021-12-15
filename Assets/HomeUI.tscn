@@ -1,0 +1,47 @@
+[gd_scene format=2]
+
+[node name="HomeUI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Money" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "Money: 0"
+
+[node name="Profit" type="Label" parent="."]
+margin_top = 21.0
+margin_right = 59.0
+margin_bottom = 35.0
+text = "Profit per second: 0"
+
+[node name="Energy" type="Label" parent="."]
+margin_left = 456.0
+margin_top = 1.0
+margin_right = 515.0
+margin_bottom = 15.0
+text = "Money: 0"
+
+[node name="EnergyInc" type="Label" parent="."]
+margin_left = 456.0
+margin_top = 21.0
+margin_right = 515.0
+margin_bottom = 35.0
+text = "Regen: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Special" type="Label" parent="."]
+margin_left = 841.0
+margin_top = 2.0
+margin_right = 906.0
+margin_bottom = 33.0
+text = "Specials: -
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}

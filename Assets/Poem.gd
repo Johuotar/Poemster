@@ -2,11 +2,13 @@ extends Control
 
 
 # Poem Writing Class Object
+signal poem_complete
+signal typed
+
 
 onready var instructions = get_node("Instructions")
 onready var text_edit = get_node("TextEdit")
 onready var warnings = get_node("Warnings")
-onready var energy_display = get_node("Energy")
 onready var success_display = get_node("Success")
 # Rules for passing poem
 var lines_rule = 5
@@ -17,22 +19,13 @@ var haiku_rule = false  # Write a haiku (17 syllables in 3 rows, 5-7-5)
 
 # Other params
 var energy = 10  # Can type as long as there is energy
-var demo_energy_timer = 1.0
-var max_energy = 100
+var poem_profit = 0
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Demo rules generation
 	_generate_rules()
-
-func add_energy(amount):
-	energy = energy + amount
-	if energy > max_energy:
-		energy = max_energy
-
-func remove_energy(amount):
-	energy = max(energy - amount, 0)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -42,12 +35,6 @@ func _process(delta):
 	else:
 		text_edit.readonly = true
 		warnings.text = "Out of energy!"
-	demo_energy_timer -= 1 * delta
-	if demo_energy_timer <= 0.0:
-		# Debug energy meter
-		demo_energy_timer = 1.0
-		add_energy(3)
-		energy_display.text = "Energy: %s" % str(energy)
 		
 func _generate_rules():
 	# Generate random rules for poem, and generate instructions for them
@@ -75,6 +62,8 @@ func _generate_rules():
 	letters_rule = {}
 	for i in range(0, use_letters):
 		letters_rule[available_letters[rand_range(0, len(available_letters))]] = randi() % 5
+		
+	poem_profit = 5
 		
 	# TODO: It's possible that the rules generation generates unsolvable poems right now.
 	instructions.text = "Write a %s line poem,\nwith %s words on each line,\nhaving %s letters in minimum." % [str(lines_rule), str(line_words_num), str(letters_rule)]
@@ -118,12 +107,12 @@ func _check_completion():
 		success_display.text = "Failure!"
 		success_display.modulate = Color(1, 0, 0)
 	print(success)
+	if success:
+		emit_signal("poem_complete", poem_profit)
 
 
 func _on_TextEdit_text_changed():
-	# Remove energy when changing text
-	remove_energy(1)
-	energy_display.text = "Energy: %s" % str(energy)
+	emit_signal("typed")
 
 
 func _on_Submit_pressed():

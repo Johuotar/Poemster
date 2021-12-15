@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="AtlasTexture" id=1]
+
+[node name="TextureWorkshop" type="Sprite"]
+texture = SubResource( 1 )
+
+[node name="Bed" type="Sprite" parent="."]
+
+[node name="Cabinet" type="Sprite" parent="."]
+
+[node name="Cabinet2" type="Sprite" parent="."]
+
+[node name="FlowerPot" type="Sprite" parent="."]
+
+[node name="TV" type="Sprite" parent="."]
+
+[node name="IncenseBurner" type="Sprite" parent="."]
+
+[node name="Bonsai" type="Sprite" parent="."]

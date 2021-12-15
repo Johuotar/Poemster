@@ -51,17 +51,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Energy" type="Label" parent="."]
-modulate = Color( 0.0313726, 0, 1, 1 )
-margin_left = 121.0
-margin_top = 57.0
-margin_right = 276.0
-margin_bottom = 82.0
-text = "Energy: 10"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Submit" type="Button" parent="."]
 margin_left = 508.0
 margin_top = 365.0

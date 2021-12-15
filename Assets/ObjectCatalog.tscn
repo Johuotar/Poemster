@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Catalogue.gd" type="Script" id=2]
+
+[node name="Catalogue" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 3.0
+margin_top = 2.0
+margin_right = -1.0
+margin_bottom = 8.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ObjectCatalog" type="ItemList" parent="."]
+margin_right = 280.0
+margin_bottom = 442.0
+allow_reselect = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="item_selected" from="ObjectCatalog" to="." method="_on_ObjectCatalog_item_selected"]
