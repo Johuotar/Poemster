@@ -1,0 +1,87 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/Credits.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Godot Wild Jam 40 icons/GWJ-40-Theme.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/ChallengeCard.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/cardSpeedCurve.tres" type="Curve" id=4]
+[ext_resource path="res://Assets/Godot Wild Jam 40 icons/newGame.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Godot Wild Jam 40 icons/sega.png" type="Texture" id=6]
+
+[node name="Credits" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1024.0
+margin_bottom = -600.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+carousel = NodePath("Carousel")
+cardTimer = NodePath("CardTimer")
+cardSpeedCurve = ExtResource( 4 )
+
+[node name="GameTitle" type="Label" parent="."]
+margin_left = 382.0
+margin_top = 11.0
+margin_right = 608.0
+margin_bottom = 49.0
+text = "POEMSTER
+Godot Wild Jam 40 enty"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreditsLabel" type="Label" parent="."]
+margin_left = 288.0
+margin_top = 113.0
+margin_right = 688.0
+margin_bottom = 213.0
+rect_min_size = Vector2( 400, 100 )
+text = "CREDITS
+
+Programming, Graphis, Sounds, Music, Design
+jukeri
+Octahedron Software"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ThemeCard" type="TextureRect" parent="."]
+margin_left = 423.0
+margin_top = 55.0
+margin_right = 1123.0
+margin_bottom = 255.0
+rect_scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Carousel" type="Control" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ChallengeCard" parent="Carousel" instance=ExtResource( 3 )]
+
+[node name="ChallengeCard2" parent="Carousel" instance=ExtResource( 3 )]
+margin_left = -597.0
+margin_top = 348.0
+margin_right = 284.0
+margin_bottom = 1549.0
+texture = ExtResource( 5 )
+
+[node name="ChallengeCard3" parent="Carousel" instance=ExtResource( 3 )]
+margin_left = -386.0
+margin_top = 348.0
+margin_right = 495.0
+margin_bottom = 1549.0
+texture = ExtResource( 6 )
+
+[node name="CardTimer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
