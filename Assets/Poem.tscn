@@ -1,0 +1,87 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Poem.gd" type="Script" id=1]
+
+[node name="Poem" type="Control"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Instructions" type="Label" parent="."]
+margin_left = 124.0
+margin_top = 4.0
+margin_right = 939.0
+margin_bottom = 51.0
+text = "Instructions appear here."
+align = 1
+valign = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 90.0
+margin_top = 62.0
+margin_right = 130.0
+margin_bottom = 102.0
+
+[node name="TextEdit" type="TextEdit" parent="."]
+margin_left = 276.0
+margin_top = 83.0
+margin_right = 783.0
+margin_bottom = 333.0
+text = "Type a Poem Here."
+show_line_numbers = true
+context_menu_enabled = false
+wrap_enabled = true
+caret_blink = true
+caret_moving_by_right_click = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Warnings" type="Label" parent="."]
+modulate = Color( 1, 0, 0, 1 )
+margin_left = 120.0
+margin_top = 52.0
+margin_right = 938.0
+margin_bottom = 86.0
+text = "Warnings appear here."
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Energy" type="Label" parent="."]
+modulate = Color( 0.0313726, 0, 1, 1 )
+margin_left = 121.0
+margin_top = 57.0
+margin_right = 276.0
+margin_bottom = 82.0
+text = "Energy: 10"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Submit" type="Button" parent="."]
+margin_left = 508.0
+margin_top = 365.0
+margin_right = 565.0
+margin_bottom = 385.0
+text = "Submit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Success" type="Label" parent="."]
+margin_left = 477.0
+margin_top = 341.0
+margin_right = 595.0
+margin_bottom = 355.0
+text = "Check here!"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="text_changed" from="TextEdit" to="." method="_on_TextEdit_text_changed"]
+[connection signal="pressed" from="Submit" to="." method="_on_Submit_pressed"]
