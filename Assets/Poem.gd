@@ -18,6 +18,7 @@ var haiku_rule = false  # Write a haiku (17 syllables in 3 rows, 5-7-5)
 # Other params
 var energy = 10  # Can type as long as there is energy
 var demo_energy_timer = 1.0
+var max_energy = 100
 
 
 # Called when the node enters the scene tree for the first time.
@@ -25,6 +26,13 @@ func _ready():
 	# Demo rules generation
 	_generate_rules()
 
+func add_energy(amount):
+	energy = energy + amount
+	if energy > max_energy:
+		energy = max_energy
+
+func remove_energy(amount):
+	energy = max(energy - amount, 0)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -38,7 +46,7 @@ func _process(delta):
 	if demo_energy_timer <= 0.0:
 		# Debug energy meter
 		demo_energy_timer = 1.0
-		energy += 10
+		add_energy(3)
 		energy_display.text = "Energy: %s" % str(energy)
 		
 func _generate_rules():
@@ -114,7 +122,7 @@ func _check_completion():
 
 func _on_TextEdit_text_changed():
 	# Remove energy when changing text
-	energy -= 1
+	remove_energy(1)
 	energy_display.text = "Energy: %s" % str(energy)
 
 
