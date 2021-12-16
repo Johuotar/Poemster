@@ -72,13 +72,9 @@ __meta__ = {
 [node name="ChallengeCard" parent="Carousel" instance=ExtResource( 3 )]
 
 [node name="ChallengeCard2" parent="Carousel" instance=ExtResource( 3 )]
-margin_left = -444.0
-margin_right = 437.0
 texture = ExtResource( 5 )
 
 [node name="ChallengeCard3" parent="Carousel" instance=ExtResource( 3 )]
-margin_left = -666.0
-margin_right = 215.0
 texture = ExtResource( 6 )
 
 [node name="ExitBtn" type="Button" parent="."]

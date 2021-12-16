@@ -7,10 +7,12 @@ var card_index = 0
 export (Curve) var cardSpeedCurve
 var moveAmount
 var viewportX = OS.window_size.x
+var cardStartX = null
 
 func _ready():
 	for card in carousel.get_children():
 		cards.append(card)
+		cardStartX = card.rect_position.x
 	active_card = cards[card_index]
 
 func _process(delta):
@@ -19,7 +21,7 @@ func _process(delta):
 		if moveAmount < 5:
 			moveAmount = 0.5
 		if active_card.rect_position.x > viewportX + 1:
-			active_card.rect_position.x = active_card.startXPos
+			active_card.rect_position.x = cardStartX
 			 # TODO: FIX: cards dont stay in sync and will begin overlapping
 			if !card_index + 1 == cards.size():
 				card_index += 1
