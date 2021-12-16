@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Godot Wild Jam 40 icons/overworked.png" type="Texture" id=1]
+
+[node name="ChallengeCard" type="TextureRect"]
+margin_left = -178.0
+margin_top = 351.0
+margin_right = 703.0
+margin_bottom = 1552.0
+rect_scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
