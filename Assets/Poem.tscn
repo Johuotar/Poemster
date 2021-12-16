@@ -16,6 +16,9 @@ margin_bottom = 51.0
 text = "Instructions appear here."
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_left = 90.0
@@ -72,5 +75,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Rip" type="Button" parent="."]
+margin_left = 643.0
+margin_top = 367.0
+margin_right = 679.0
+margin_bottom = 387.0
+text = "Rip!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Audio" type="AudioStreamPlayer" parent="."]
+
 [connection signal="text_changed" from="TextEdit" to="." method="_on_TextEdit_text_changed"]
 [connection signal="pressed" from="Submit" to="." method="_on_Submit_pressed"]
+[connection signal="pressed" from="Rip" to="." method="_on_Rip_pressed"]

@@ -63,10 +63,11 @@ func _generate_rules():
 	for i in range(0, use_letters):
 		letters_rule[available_letters[rand_range(0, len(available_letters))]] = randi() % 5
 		
-	poem_profit = 5
+	# Simple income generation algorithm!
+	poem_profit = floor((1 + line_words_num + len(letters_rule) + lines_rule) / 2)
 		
-	# TODO: It's possible that the rules generation generates unsolvable poems right now.
-	instructions.text = "Write a %s line poem,\nwith %s words on each line,\nhaving %s letters in minimum." % [str(lines_rule), str(line_words_num), str(letters_rule)]
+	# TODO: It's possible that the rules generation generates unsolvable poems right now. Solved by ripping paper of course!
+	instructions.text = "Write a %s line poem,\nwith %s words on each line,\nhaving %s letters in minimum.\nExpect profit to be %s credits once on the market!" % [str(lines_rule), str(line_words_num), str(letters_rule), str(poem_profit)]
 		
 func _check_completion():
 	# Check that Poem is complete as necessary
@@ -91,7 +92,7 @@ func _check_completion():
 			for key in letters_rule.keys():
 				found_keys[key] = 0
 				for character in text_edit.text:
-					if character.lowercase() == key:
+					if character.to_lower() == key:
 						found_keys[key] += 1
 			# Check that we have enough letters of each type
 			for key in letters_rule.keys():
@@ -106,8 +107,10 @@ func _check_completion():
 	else:
 		success_display.text = "Failure!"
 		success_display.modulate = Color(1, 0, 0)
-	print(success)
 	if success:
+		# Empty canvas!
+		text_edit.text = ""
+		_generate_rules()
 		emit_signal("poem_complete", poem_profit)
 
 
@@ -117,3 +120,9 @@ func _on_TextEdit_text_changed():
 
 func _on_Submit_pressed():
 	_check_completion()
+
+
+func _on_Rip_pressed():
+	# RIP! Text is emptied and new rules will be generated
+	text_edit.text = ""
+	_generate_rules()
