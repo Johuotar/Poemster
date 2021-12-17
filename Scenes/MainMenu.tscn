@@ -1,0 +1,70 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://fonts/MainTheme.tres" type="Theme" id=1]
+[ext_resource path="res://Scenes/MainMenu.gd" type="Script" id=2]
+[ext_resource path="res://gfx/ui/grayRectangle.png" type="Texture" id=3]
+[ext_resource path="res://gfx/ui/panel.png" type="Texture" id=4]
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bg" type="TextureRect" parent="."]
+self_modulate = Color( 0.290196, 0.345098, 0.415686, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextContainer" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 169.0
+margin_right = 787.0
+margin_bottom = 600.0
+
+[node name="Title" type="Label" parent="HBoxContainer/TextContainer"]
+margin_right = 618.0
+margin_bottom = 26.0
+text = "Poemster"
+align = 1
+uppercase = true
+
+[node name="Description" type="Label" parent="HBoxContainer/TextContainer"]
+margin_top = 30.0
+margin_right = 618.0
+margin_bottom = 56.0
+text = "A poetry writing game for Godot Wild Jam 40. Theme: Cozy"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonContainer" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 791.0
+margin_right = 855.0
+margin_bottom = 600.0
+
+[node name="StartBtn" type="TextureButton" parent="HBoxContainer/ButtonContainer"]
+margin_right = 64.0
+margin_bottom = 64.0
+texture_normal = ExtResource( 4 )
+
+[node name="Credits" type="TextureButton" parent="HBoxContainer/ButtonContainer"]
+margin_top = 68.0
+margin_right = 64.0
+margin_bottom = 132.0
+texture_normal = ExtResource( 4 )
