@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/gentle-winds.ogg-95f583248f905ebb43254d0fc6a591a0.oggstr"
+
+[deps]
+
+source_file="res://audio/gentle-winds.ogg"
+dest_files=[ "res://.import/gentle-winds.ogg-95f583248f905ebb43254d0fc6a591a0.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Settings.png-883c9aef6f20221951d5db764d69fcf1.stex"
+path="res://.import/panelWide.png-1356b7078193d9192edd603b1bf2fd5c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gfx/ui/Settings.png"
-dest_files=[ "res://.import/Settings.png-883c9aef6f20221951d5db764d69fcf1.stex" ]
+source_file="res://gfx/ui/panelWide.png"
+dest_files=[ "res://.import/panelWide.png-1356b7078193d9192edd603b1bf2fd5c.stex" ]
 
 [params]
 

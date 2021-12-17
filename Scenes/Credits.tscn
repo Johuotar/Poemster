@@ -95,15 +95,14 @@ modulate = Color( 0, 0, 0, 0.403922 )
 show_behind_parent = true
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -430.0
-margin_top = -718.0
-margin_right = 1570.0
-margin_bottom = 1282.0
+margin_left = 2552.0
+margin_top = -251.0
+margin_right = 4552.0
+margin_bottom = 1749.0
 rect_min_size = Vector2( 2000, 2000 )
 texture = ExtResource( 7 )
 expand = true
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
