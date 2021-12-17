@@ -402,6 +402,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="TextureButton" type="TextureButton" parent="OtherButtons"]
+margin_left = 852.0
+margin_top = 528.0
+margin_right = 892.0
+margin_bottom = 568.0
+
 [node name="Ghost" type="Sprite" parent="."]
 visible = false
 modulate = Color( 1, 1, 1, 0.603922 )

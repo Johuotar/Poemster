@@ -55,6 +55,8 @@ func _update_ui():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if Input.is_action_pressed("ui_esc"):
+		get_parent().set_scene("main_menu")
 	ghost.transform.origin = get_global_mouse_position()
 	if ghost.modulate.g < 1.0:
 		ghost.modulate.g += 1 * delta
