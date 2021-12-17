@@ -1,28 +1,52 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/story_theme.tres" type="Theme" id=1]
 [ext_resource path="res://Assets/HomeUI.gd" type="Script" id=2]
+[ext_resource path="res://gfx/ui/panel.png" type="Texture" id=3]
+[ext_resource path="res://fonts/MainTheme.tres" type="Theme" id=4]
 
 [node name="HomeUI" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 4 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="TopBG" type="NinePatchRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 56.0
+texture = ExtResource( 3 )
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Money" type="Label" parent="."]
-margin_right = 40.0
-margin_bottom = 14.0
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 10.0
+margin_top = 1.0
+margin_right = 86.0
+margin_bottom = 29.0
 text = "Money: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Profit" type="Label" parent="."]
-margin_top = 21.0
-margin_right = 59.0
-margin_bottom = 35.0
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 9.0
+margin_top = 25.0
+margin_right = 171.0
+margin_bottom = 53.0
 text = "Profit per second: 0"
 
 [node name="Energy" type="Label" parent="."]
+modulate = Color( 0, 0, 0, 1 )
 margin_left = 456.0
 margin_top = 1.0
 margin_right = 515.0
@@ -30,31 +54,38 @@ margin_bottom = 15.0
 text = "Money: 0"
 
 [node name="EnergyInc" type="Label" parent="."]
-margin_left = 456.0
-margin_top = 21.0
-margin_right = 515.0
-margin_bottom = 35.0
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 457.0
+margin_top = 25.0
+margin_right = 528.0
+margin_bottom = 53.0
 text = "Regen: 0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Special" type="Label" parent="."]
-margin_left = 841.0
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 837.0
 margin_top = 2.0
-margin_right = 906.0
-margin_bottom = 33.0
+margin_right = 921.0
+margin_bottom = 61.0
 text = "Specials: -
 "
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="StoryBG" type="ColorRect" parent="."]
+[node name="StoryBG" type="NinePatchRect" parent="."]
 margin_left = 264.0
 margin_top = 140.0
 margin_right = 743.0
 margin_bottom = 415.0
+texture = ExtResource( 3 )
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -72,10 +103,11 @@ __meta__ = {
 }
 
 [node name="Dismiss" type="Button" parent="StoryBG"]
-margin_left = 440.0
-margin_top = 14.0
-margin_right = 460.0
-margin_bottom = 34.0
+margin_left = 427.0
+margin_top = 10.0
+margin_right = 467.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 40, 40 )
 text = "X"
 
 [connection signal="pressed" from="StoryBG/Dismiss" to="." method="_on_Dismiss_pressed"]
