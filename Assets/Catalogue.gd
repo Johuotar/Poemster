@@ -9,65 +9,65 @@ onready var data = [
 	{
 		"name": "Chair",
 		"icon": preload("res://gfx/res/chair.tres"),
-		"cost": 5,
-		"energy": 1,
+		"cost": 100,
+		"energy": 2,
 		"profit": 0,
 		"special": [],
-		"limit": 0
+		"limit": 8
 	},
 	{
 		"name": "Flower Pot",
 		"icon": preload("res://gfx/res/flowerpot.tres"),
-		"cost": 100,
-		"energy": 5,
+		"cost": 50,
+		"energy": 1,
 		"profit": 0,
 		"special": [],
-		"limit": 0
+		"limit": null
 	},
 	{
 		"name": "Incense Burner",
 		"icon": preload("res://gfx/res/incense.tres"),
-		"cost": 100,
+		"cost": 150,
 		"energy": 5,
 		"profit": 0,
 		"special": [],
-		"limit": 0
+		"limit": 4
 	},
 	{
 		"name": "Bed",
 		"icon": preload("res://gfx/res/bed.tres"),
-		"cost": 100,
-		"energy": 5,
+		"cost": 1000,
+		"energy": 3,
 		"profit": 0,
 		"special": [],
-		"limit": 0
+		"limit": 4
 	},
 	{
-		"name": "Bonsai",
+		"name": "BONZAJ",
 		"icon": preload("res://gfx/res/bonsai.tres"),
 		"cost": 100,
-		"energy": 5,
+		"energy": 2,
 		"profit": 0,
-		"special": [],
-		"limit": 0
+		"special": ["HAJKU"],
+		"limit": 1
 	},
 	{
 		"name": "Telly",
 		"icon": preload("res://gfx/res/telly.tres"),
-		"cost": 100,
+		"cost": 1000,
 		"profit": 0,
-		"energy": 5,
-		"special": [],
-		"limit": 0
+		"energy": 2,
+		"special": ["Modern"],
+		"limit": 1
 	},
 	{
 		"name": "Cabinet",
 		"icon": preload("res://gfx/res/cabinet.tres"),
 		"cost": 500,
 		"profit": 0,
-		"energy": 50,
+		"energy": 2,
 		"special": [],
-		"limit": 1
+		"limit": 8
 	},
 ]
 
@@ -75,7 +75,7 @@ onready var data = [
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for item in data:
-		item_list.add_item("%s: %s cr + %s ENG" % [item["name"], str(item["cost"]), str(item["energy"])], item["icon"])
+		item_list.add_item("%s: %s cr + %s ENG %s" % [item["name"], str(item["cost"]), str(item["energy"]), item["special"]], item["icon"])
 
 
 func _on_ObjectCatalog_item_selected(index):

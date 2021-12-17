@@ -8,56 +8,56 @@ onready var data = [
 	{
 		"name": "Chair",
 		"icon": preload("res://gfx/res/chair.tres"),
-		"cost": 5,
-		"energy": 1,
+		"cost": 100,
+		"energy": 2,
 		"special": [],
-		"limit": 0
+		"limit": 8
 	},
 	{
 		"name": "Flower Pot",
 		"icon": preload("res://gfx/res/flowerpot.tres"),
-		"cost": 100,
-		"energy": 5,
+		"cost": 60,
+		"energy": 1,
 		"special": [],
 		"limit": 0
 	},
 	{
 		"name": "Incense Burner",
 		"icon": preload("res://gfx/res/incense.tres"),
-		"cost": 100,
-		"energy": 5,
+		"cost": 200,
+		"energy": 2,
 		"special": [],
 		"limit": 0
 	},
 	{
 		"name": "Bed",
 		"icon": preload("res://gfx/res/bed.tres"),
-		"cost": 100,
+		"cost": 1000,
 		"energy": 5,
 		"special": [],
 		"limit": 0
 	},
 	{
-		"name": "Bonsai",
+		"name": "BONZAJ",
 		"icon": preload("res://gfx/res/bonsai.tres"),
-		"cost": 100,
-		"energy": 5,
-		"special": [],
-		"limit": 0
+		"cost": 150,
+		"energy": 2,
+		"special": ["haiku"],  # Bonsai tree enables haikus
+		"limit": 1
 	},
 	{
 		"name": "Telly",
 		"icon": preload("res://gfx/res/telly.tres"),
-		"cost": 100,
-		"energy": 5,
-		"special": [],
-		"limit": 0
+		"cost": 1000,
+		"energy": 2,
+		"special": ["modern"],  # Telly enables postmodern poetry
+		"limit": 1
 	},
 	{
 		"name": "Cabinet",
 		"icon": preload("res://gfx/res/cabinet.tres"),
 		"cost": 500,
-		"energy": 50,
+		"energy": 4,
 		"special": [],
 		"limit": 1
 	},
@@ -71,5 +71,4 @@ func _ready():
 
 
 func _on_ObjectCatalog_item_selected(index):
-	print("TUST")
 	emit_signal("item_chosen", data[index])
