@@ -26,9 +26,9 @@ cardSpeedCurve = ExtResource( 4 )
 [node name="GameTitle" type="Label" parent="."]
 margin_left = 382.0
 margin_top = 11.0
-margin_right = 608.0
-margin_bottom = 49.0
-text = "POEMSTER
+margin_right = 640.0
+margin_bottom = 66.0
+text = "POEMSTER - CREDITS
 Godot Wild Jam 40 entry"
 align = 1
 __meta__ = {
@@ -36,26 +36,26 @@ __meta__ = {
 }
 
 [node name="CreditsLabel" type="Label" parent="."]
-margin_left = 288.0
-margin_top = 130.0
-margin_right = 688.0
-margin_bottom = 282.0
+margin_left = 79.0
+margin_top = 125.0
+margin_right = 931.0
+margin_bottom = 296.0
 rect_min_size = Vector2( 400, 100 )
-text = "CREDITS
-
-Programming, Graphis, Sounds, Music, Design
+text = "Programming, Graphics, Music, Design
 jukeri
-Octahedron Software"
+Octahedron Software
+
+m5x7 Font - a font by Daniel Linssen - free to use but attribution appreciated."
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ThemeCard" type="TextureRect" parent="."]
-margin_left = 423.0
-margin_top = 80.0
-margin_right = 1123.0
-margin_bottom = 280.0
+margin_left = 441.0
+margin_top = 76.0
+margin_right = 1141.0
+margin_bottom = 276.0
 rect_scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 2 )
 __meta__ = {
