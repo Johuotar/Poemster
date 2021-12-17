@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Assets/Poem.gd" type="Script" id=1]
 [ext_resource path="res://gfx/ui/panel.png" type="Texture" id=2]
-[ext_resource path="res://fonts/AlegreyaTheme.tres" type="Theme" id=3]
+[ext_resource path="res://fonts/MainTheme.tres" type="Theme" id=3]
 
 [node name="Poem" type="Control"]
 theme = ExtResource( 3 )
@@ -73,21 +73,22 @@ __meta__ = {
 }
 
 [node name="Submit" type="Button" parent="."]
-margin_left = 498.0
-margin_top = 466.0
-margin_right = 572.0
-margin_bottom = 500.0
-text = "Submit"
+margin_left = 399.0
+margin_top = 446.0
+margin_right = 530.0
+margin_bottom = 480.0
+text = "Submit poem"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Success" type="Label" parent="."]
+visible = false
 self_modulate = Color( 0, 0, 0, 1 )
-margin_left = 477.0
-margin_top = 436.0
-margin_right = 595.0
-margin_bottom = 464.0
+margin_left = 478.0
+margin_top = 432.0
+margin_right = 596.0
+margin_bottom = 460.0
 text = "Check here!"
 align = 1
 __meta__ = {
@@ -95,11 +96,11 @@ __meta__ = {
 }
 
 [node name="Rip" type="Button" parent="."]
-margin_left = 610.0
-margin_top = 464.0
-margin_right = 657.0
-margin_bottom = 498.0
-text = "Rip!"
+margin_left = 584.0
+margin_top = 446.0
+margin_right = 745.0
+margin_bottom = 480.0
+text = "Tear out the page!"
 __meta__ = {
 "_edit_use_anchors_": false
 }

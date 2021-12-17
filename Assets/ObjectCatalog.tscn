@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
+[ext_resource path="res://fonts/MainTheme.tres" type="Theme" id=1]
 [ext_resource path="res://Assets/Catalogue.gd" type="Script" id=2]
 
 [node name="Catalogue" type="Control"]
@@ -9,14 +10,16 @@ margin_left = 3.0
 margin_top = 2.0
 margin_right = -1.0
 margin_bottom = 8.0
+theme = ExtResource( 1 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ObjectCatalog" type="ItemList" parent="."]
-margin_right = 280.0
+margin_right = 329.0
 margin_bottom = 442.0
+rect_min_size = Vector2( 286, 442 )
 allow_reselect = true
 __meta__ = {
 "_edit_use_anchors_": false
