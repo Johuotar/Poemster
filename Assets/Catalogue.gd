@@ -22,7 +22,7 @@ onready var data = [
 		"energy": 1,
 		"profit": 0,
 		"special": [],
-		"limit": 0
+		"limit": null
 	},
 	{
 		"name": "Incense Burner",
@@ -37,7 +37,7 @@ onready var data = [
 		"name": "Bed",
 		"icon": preload("res://gfx/res/bed.tres"),
 		"cost": 1000,
-		"energy": 4,
+		"energy": 3,
 		"profit": 0,
 		"special": [],
 		"limit": 4
@@ -46,7 +46,7 @@ onready var data = [
 		"name": "BONZAJ",
 		"icon": preload("res://gfx/res/bonsai.tres"),
 		"cost": 100,
-		"energy": 5,
+		"energy": 2,
 		"profit": 0,
 		"special": ["HAJKU"],
 		"limit": 1
@@ -56,7 +56,7 @@ onready var data = [
 		"icon": preload("res://gfx/res/telly.tres"),
 		"cost": 1000,
 		"profit": 0,
-		"energy": 4,
+		"energy": 2,
 		"special": ["Modern"],
 		"limit": 1
 	},

@@ -4,8 +4,8 @@ extends TileMap
 signal poem_complete
 
 # Declare member variables here. Examples:
-var money = 1000
-var energy = 10
+var money = 50
+var energy = 50
 var profit = 0
 var energy_increase = 1
 var special_rules = []
@@ -24,8 +24,8 @@ onready var ui_dismiss = get_node("HomeUI/StoryBG/Dismiss")
 # Story things
 var story_progression = 0
 var story_texts = {
-	0: "What a cozy morning.\nLet's make the most of it!",  # TODO: Add tutorial texts
-	5: "How riveting! I am enchanted."
+	0: "\nThis new cabin is thrilling.\nI can write so many poems here!\nTo write, I should press 'Begin Writing'.\nI will know what to write next!\nAlso, I need to take care of my energy.\nI can buy new stuff for that\nfrom the 'View Catalogue' button. :)",
+	1: "What a cozy morning.\nLet's make the most of it!\nI should remember that special items\nlike the 'BONZAJ' and 'Telly'\nallow new poem types for me!"
 }
 var story_dismissed = false
 var chosen_item = null
@@ -95,6 +95,7 @@ func _on_Poem_poem_complete(poem_profit):
 		if story_dismissed:
 			story_dismissed = false
 			ui_story.visible = true
+			poem.visible = false
 			ui_story_text.text = story_texts[story_progression]
 
 func _on_Poem_typed():
@@ -137,12 +138,13 @@ func _on_BuildArea_input_event(viewport, event, shape_idx):
 	if event.is_action_pressed("buy_item"):
 		# BUy an item from catalogue
 		if chosen_item:
-			if object_limits[chosen_item["name"]] > 0:
+			if object_limits[chosen_item["name"]] == null or object_limits[chosen_item["name"]] > 0:
 				if money >= chosen_item["cost"]:
 					Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 					money -= chosen_item["cost"]
 					var new_home_object = buyable.instance()
 					new_home_object.texture = chosen_item["icon"]
+					# Update profit margins and energy incomes if item such provides
 					profit += chosen_item["profit"]
 					energy_increase += chosen_item["energy"]
 					if len(chosen_item["special"]) > 0:
@@ -152,7 +154,8 @@ func _on_BuildArea_input_event(viewport, event, shape_idx):
 					new_home_object.transform.origin = get_global_mouse_position()
 					furniture.add_child(new_home_object)
 					ghost.visible = false
-					object_limits[chosen_item["name"]] -= 1
+					if object_limits[chosen_item["name"]] != null:
+						object_limits[chosen_item["name"]] -= 1
 					chosen_item = null
 				else:
 					ghost.modulate.g = 0.0

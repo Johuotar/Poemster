@@ -20,7 +20,7 @@ __meta__ = {
 margin_left = 236.0
 margin_top = 6.0
 margin_right = 856.0
-margin_bottom = 510.0
+margin_bottom = 488.0
 rect_min_size = Vector2( 400, 300 )
 texture = ExtResource( 2 )
 patch_margin_left = 6
@@ -36,7 +36,7 @@ modulate = Color( 0, 0, 0, 1 )
 margin_left = 125.0
 margin_top = 13.0
 margin_right = 940.0
-margin_bottom = 86.0
+margin_bottom = 61.0
 text = "Instructions appear here."
 align = 1
 valign = 1
@@ -51,10 +51,10 @@ margin_right = 130.0
 margin_bottom = 102.0
 
 [node name="TextEdit" type="TextEdit" parent="."]
-margin_left = 300.0
-margin_top = 131.0
-margin_right = 803.0
-margin_bottom = 425.0
+margin_left = 292.0
+margin_top = 128.0
+margin_right = 795.0
+margin_bottom = 349.0
 custom_colors/selection_color = Color( 0, 1, 0.25098, 1 )
 custom_colors/caret_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -73,10 +73,10 @@ __meta__ = {
 
 [node name="Warnings" type="Label" parent="."]
 modulate = Color( 1, 0, 0, 1 )
-margin_left = 124.0
-margin_top = 89.0
-margin_right = 942.0
-margin_bottom = 126.0
+margin_left = 119.0
+margin_top = 94.0
+margin_right = 937.0
+margin_bottom = 131.0
 text = "Warnings appear here."
 align = 1
 valign = 1
@@ -84,11 +84,24 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Info" type="Label" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 126.0
+margin_top = 342.0
+margin_right = 944.0
+margin_bottom = 379.0
+text = "Type something!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Submit" type="Button" parent="."]
-margin_left = 399.0
-margin_top = 446.0
-margin_right = 530.0
-margin_bottom = 480.0
+margin_left = 398.0
+margin_top = 439.0
+margin_right = 540.0
+margin_bottom = 473.0
 text = "Submit poem"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -96,10 +109,10 @@ __meta__ = {
 
 [node name="Success" type="Label" parent="."]
 self_modulate = Color( 0, 0, 0, 1 )
-margin_left = 270.0
-margin_top = 449.0
-margin_right = 388.0
-margin_bottom = 477.0
+margin_left = 269.0
+margin_top = 442.0
+margin_right = 387.0
+margin_bottom = 470.0
 text = "Check here!"
 align = 1
 __meta__ = {
@@ -107,10 +120,10 @@ __meta__ = {
 }
 
 [node name="Rip" type="Button" parent="."]
-margin_left = 584.0
-margin_top = 446.0
-margin_right = 745.0
-margin_bottom = 480.0
+margin_left = 583.0
+margin_top = 439.0
+margin_right = 791.0
+margin_bottom = 473.0
 text = "Tear out the page!"
 __meta__ = {
 "_edit_use_anchors_": false
