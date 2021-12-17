@@ -39,18 +39,25 @@ onready var ghost = get_node("Ghost")
 onready var catalog = get_node("Catalogue")
 onready var buyable = preload("res://Assets/HomeObject.tscn")
 onready var furniture = get_node("Furniture")
+var object_limits = {}
 
 
 func _ready():
 	ui_story_text.text = story_texts[story_progression]
-
+	# Load object limits from Catalogue
+	for item in catalog.data:
+		object_limits[item["name"]] = item["limit"]
 
 func _update_ui():
 	ui_money.text = "Money: %s" % str(money)
 	ui_energy.text = "Energy: %s" % str(energy)
 	ui_energy_inc.text = "Regen: %s" % str(energy_increase)
 	ui_profit.text = "Profit: %s" % str(profit)
-	ui_specials.text = "Specials: -"  # TODO:
+	var special_rules_text = ""
+	if len(special_rules) > 0:
+		for i in range(0, len(special_rules)):
+			special_rules_text += "\n%s" % special_rules[i]
+	ui_specials.text = "Specials: %s" % special_rules_text
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -89,12 +96,6 @@ func _on_Poem_poem_complete(poem_profit):
 			story_dismissed = false
 			ui_story.visible = true
 			ui_story_text.text = story_texts[story_progression]
-
-
-func buy_home_object(object):
-	# Adds a new home object, if one stored from catalogue and updates stats based on that
-	pass
-
 
 func _on_Poem_typed():
 	energy -= 1
@@ -136,18 +137,26 @@ func _on_BuildArea_input_event(viewport, event, shape_idx):
 	if event.is_action_pressed("buy_item"):
 		# BUy an item from catalogue
 		if chosen_item:
-			if money >= chosen_item["cost"]:
-				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-				money -= chosen_item["cost"]
-				var new_home_object = buyable.instance()
-				new_home_object.texture = chosen_item["icon"]
-				profit += chosen_item["profit"]
-				energy_increase += chosen_item["energy"]
-				# TODO: Handle specials
-				new_home_object.transform.origin = get_global_mouse_position()
-				furniture.add_child(new_home_object)
-				ghost.visible = false
-				chosen_item = null
+			if object_limits[chosen_item["name"]] > 0:
+				if money >= chosen_item["cost"]:
+					Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+					money -= chosen_item["cost"]
+					var new_home_object = buyable.instance()
+					new_home_object.texture = chosen_item["icon"]
+					profit += chosen_item["profit"]
+					energy_increase += chosen_item["energy"]
+					if len(chosen_item["special"]) > 0:
+						for spec in chosen_item["special"]:
+							if not spec in special_rules:
+								special_rules.append(spec)
+					new_home_object.transform.origin = get_global_mouse_position()
+					furniture.add_child(new_home_object)
+					ghost.visible = false
+					object_limits[chosen_item["name"]] -= 1
+					chosen_item = null
+				else:
+					ghost.modulate.g = 0.0
+					ghost.modulate.b = 0.0
 			else:
 				ghost.modulate.g = 0.0
 				ghost.modulate.b = 0.0
