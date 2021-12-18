@@ -51,7 +51,10 @@ margin_left = 456.0
 margin_top = 1.0
 margin_right = 515.0
 margin_bottom = 15.0
-text = "Money: 0"
+text = "Energy: 0/100"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="EnergyInc" type="Label" parent="."]
 modulate = Color( 0, 0, 0, 1 )
@@ -77,10 +80,10 @@ __meta__ = {
 }
 
 [node name="StoryBG" type="NinePatchRect" parent="."]
-margin_left = 264.0
-margin_top = 140.0
-margin_right = 743.0
-margin_bottom = 415.0
+margin_left = 119.0
+margin_top = 113.0
+margin_right = 915.0
+margin_bottom = 534.0
 texture = ExtResource( 3 )
 patch_margin_left = 6
 patch_margin_top = 6
@@ -92,10 +95,10 @@ __meta__ = {
 
 [node name="StoryText" type="Label" parent="StoryBG"]
 modulate = Color( 0, 0, 0, 1 )
-margin_left = 60.0
-margin_top = 44.0
-margin_right = 435.0
-margin_bottom = 210.0
+margin_left = 20.0
+margin_top = 46.0
+margin_right = 771.0
+margin_bottom = 402.0
 theme = ExtResource( 1 )
 text = "Story text appears here."
 __meta__ = {
@@ -103,10 +106,10 @@ __meta__ = {
 }
 
 [node name="Dismiss" type="Button" parent="StoryBG"]
-margin_left = 427.0
-margin_top = 10.0
-margin_right = 467.0
-margin_bottom = 50.0
+margin_left = 729.0
+margin_top = 14.0
+margin_right = 769.0
+margin_bottom = 54.0
 rect_min_size = Vector2( 40, 40 )
 text = "X"
 
