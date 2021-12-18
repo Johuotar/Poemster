@@ -176,6 +176,9 @@ func _on_BuildArea_input_event(viewport, event, shape_idx):
 					poem.available_special_rules = special_rules
 					new_home_object.transform.origin = get_global_mouse_position()
 					furniture.add_child(new_home_object)
+					#Pixel snap sprite into correct position
+					new_home_object.position.x = round(new_home_object.position.x)
+					new_home_object.position.y = round(new_home_object.position.y)
 					ghost.visible = false
 					if object_limits[chosen_item["name"]] != null:
 						object_limits[chosen_item["name"]] -= 1
