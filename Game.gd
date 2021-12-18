@@ -29,6 +29,7 @@ func set_scene(new_scene: String):
 		play_music("Credits")
 	if new_scene == "main_menu":
 		add_child(main_menu_scene.instance())
+		play_music("MenuWinds")
 
 
 func _ready():
