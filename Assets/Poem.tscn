@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Poem.gd" type="Script" id=1]
 [ext_resource path="res://gfx/ui/whitePanel.png" type="Texture" id=2]
 [ext_resource path="res://fonts/MainTheme.tres" type="Theme" id=3]
+[ext_resource path="res://gfx/ui/Button1.png" type="Texture" id=4]
+[ext_resource path="res://gfx/ui/Button1Hover.png" type="Texture" id=5]
 
 [sub_resource type="StyleBoxFlat" id=2]
 
@@ -97,35 +99,59 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Submit" type="Button" parent="."]
-margin_left = 398.0
-margin_top = 439.0
-margin_right = 540.0
-margin_bottom = 473.0
-text = "Submit poem"
+[node name="Submit" type="TextureButton" parent="."]
+margin_left = 373.0
+margin_top = 415.0
+margin_right = 565.0
+margin_bottom = 479.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label" type="Label" parent="Submit"]
+self_modulate = Color( 0, 0, 0, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Submit poem"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="Success" type="Label" parent="."]
 self_modulate = Color( 0, 0, 0, 1 )
-margin_left = 269.0
-margin_top = 442.0
-margin_right = 387.0
-margin_bottom = 470.0
+margin_left = 245.0
+margin_top = 439.0
+margin_right = 363.0
+margin_bottom = 467.0
 text = "Check here!"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Rip" type="Button" parent="."]
-margin_left = 583.0
-margin_top = 439.0
-margin_right = 791.0
-margin_bottom = 473.0
+[node name="Rip" type="TextureButton" parent="."]
+margin_left = 594.0
+margin_top = 415.0
+margin_right = 786.0
+margin_bottom = 479.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="Rip"]
+self_modulate = Color( 0, 0, 0, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
 text = "Tear out the page!"
+align = 1
+autowrap = true
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 

@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/story_theme.tres" type="Theme" id=1]
 [ext_resource path="res://Assets/HomeUI.gd" type="Script" id=2]
 [ext_resource path="res://gfx/ui/whitePanel.png" type="Texture" id=3]
 [ext_resource path="res://fonts/MainTheme.tres" type="Theme" id=4]
+[ext_resource path="res://gfx/ui/button2.png" type="Texture" id=5]
+[ext_resource path="res://gfx/ui/button2hover.png" type="Texture" id=6]
 
 [node name="HomeUI" type="Control"]
 anchor_right = 1.0
@@ -105,12 +107,28 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Dismiss" type="Button" parent="StoryBG"]
-margin_left = 729.0
-margin_top = 14.0
-margin_right = 769.0
-margin_bottom = 54.0
+[node name="Dismiss" type="TextureButton" parent="StoryBG"]
+margin_left = 723.0
+margin_top = 8.0
+margin_right = 787.0
+margin_bottom = 72.0
 rect_min_size = Vector2( 40, 40 )
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="StoryBG/Dismiss"]
+self_modulate = Color( 0, 0, 0, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
 text = "X"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
 [connection signal="pressed" from="StoryBG/Dismiss" to="." method="_on_Dismiss_pressed"]
