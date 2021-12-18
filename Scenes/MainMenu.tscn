@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://fonts/MainTheme.tres" type="Theme" id=1]
 [ext_resource path="res://Scenes/MainMenu.gd" type="Script" id=2]
 [ext_resource path="res://gfx/ui/grayRectangle.png" type="Texture" id=3]
 [ext_resource path="res://gfx/ui/Button1Hover.png" type="Texture" id=4]
 [ext_resource path="res://gfx/ui/Button1.png" type="Texture" id=5]
+[ext_resource path="res://audio/menuwinds.ogg" type="AudioStream" id=6]
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
@@ -120,6 +121,10 @@ __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+autoplay = true
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ButtonContainer/StartBtn" to="." method="_on_StartBtn_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ButtonContainer/Credits" to="." method="_on_Credits_pressed"]

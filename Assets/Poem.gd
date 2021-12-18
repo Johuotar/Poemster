@@ -55,20 +55,20 @@ func _generate_rules():
 		# Use special rule
 		var random_rule = 0
 		if len(available_special_rules) > 1:
-			random_rule = rand_range(0, len(available_special_rules) - 1)
+			random_rule = rand_range(0, len(available_special_rules))
 		if available_special_rules[random_rule] == "HAJKU":
 			# Haiku generation
 			used_special_rule = "HAJKU"
 			words_per_line = [3, 4, 3]
 			lines_rule = 3
 			poem_profit = 3
-			instructions.text = "Write a HAJKU!\nThat is, write 3 words on first line,\n4 words on second,\nand 3 words on last one."
+			instructions.text = "Write a HAJKU for 3 income!\nThat is, write 3 words on first line,\n4 words on second,\nand 3 words on last one."
 		elif available_special_rules[random_rule] == "Modern":
 			# Just ask for poem length, 50-500 characters
 			used_special_rule = "Modern"
 			modern_length = 50 + randi() % 450
 			poem_profit = 5
-			instructions.text = "Write a MödéRN PÖEm:\nThe poem must be atleast %s characters in length.\nThere are no other rules!" % str(modern_length)
+			instructions.text = "Write a MödéRN PÖEm for 5 InCÖmê:\nThe poem must be atleast %s characters in length.\nThere are no other rules!" % str(modern_length)
 	else:
 	
 		# TODO: Word end rhyming.
