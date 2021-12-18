@@ -6,7 +6,7 @@
 [ext_resource path="res://Scenes/cardSpeedCurve.tres" type="Curve" id=4]
 [ext_resource path="res://Assets/Godot Wild Jam 40 icons/newGame.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Godot Wild Jam 40 icons/sega.png" type="Texture" id=6]
-[ext_resource path="res://gfx/ui/grayRectangle.png" type="Texture" id=7]
+[ext_resource path="res://gfx/ui/poemsterbg.png" type="Texture" id=7]
 [ext_resource path="res://fonts/MainTheme.tres" type="Theme" id=8]
 [ext_resource path="res://gfx/ui/Button1.png" type="Texture" id=9]
 [ext_resource path="res://gfx/ui/Button1Hover.png" type="Texture" id=10]
@@ -24,11 +24,24 @@ __meta__ = {
 carousel = NodePath("Carousel")
 cardSpeedCurve = ExtResource( 4 )
 
+[node name="Bg2" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -155.0
+margin_top = -157.0
+margin_right = 1105.0
+margin_bottom = 843.0
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="GameTitle" type="Label" parent="."]
-margin_left = 382.0
-margin_top = 11.0
-margin_right = 640.0
-margin_bottom = 66.0
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 385.0
+margin_top = 5.0
+margin_right = 643.0
+margin_bottom = 60.0
 text = "POEMSTER - CREDITS
 Godot Wild Jam 40 entry"
 align = 1
@@ -37,10 +50,11 @@ __meta__ = {
 }
 
 [node name="CreditsLabel" type="Label" parent="."]
-margin_left = 79.0
-margin_top = 125.0
-margin_right = 931.0
-margin_bottom = 296.0
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 77.0
+margin_top = 112.0
+margin_right = 929.0
+margin_bottom = 312.0
 rect_min_size = Vector2( 400, 100 )
 text = "Programming, Graphics, Music, Design
 jukeri
@@ -55,10 +69,11 @@ __meta__ = {
 }
 
 [node name="ThemeCard" type="TextureRect" parent="."]
-margin_left = 441.0
-margin_top = 76.0
-margin_right = 1141.0
-margin_bottom = 276.0
+visible = false
+margin_left = 222.0
+margin_top = 13.0
+margin_right = 922.0
+margin_bottom = 213.0
 rect_scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 2 )
 __meta__ = {
@@ -101,22 +116,6 @@ anchor_bottom = 1.0
 text = "Return"
 align = 1
 valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Bg" type="TextureRect" parent="."]
-modulate = Color( 0, 0, 0, 0.403922 )
-show_behind_parent = true
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 2552.0
-margin_top = -251.0
-margin_right = 4552.0
-margin_bottom = 1749.0
-rect_min_size = Vector2( 2000, 2000 )
-texture = ExtResource( 7 )
-expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }

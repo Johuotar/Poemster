@@ -2,7 +2,7 @@
 
 [ext_resource path="res://fonts/MainTheme.tres" type="Theme" id=1]
 [ext_resource path="res://Scenes/MainMenu.gd" type="Script" id=2]
-[ext_resource path="res://gfx/ui/grayRectangle.png" type="Texture" id=3]
+[ext_resource path="res://gfx/ui/poemsterlogo.png" type="Texture" id=3]
 [ext_resource path="res://gfx/ui/Button1Hover.png" type="Texture" id=4]
 [ext_resource path="res://gfx/ui/Button1.png" type="Texture" id=5]
 
@@ -15,12 +15,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Bg" type="TextureRect" parent="."]
-self_modulate = Color( 0.301961, 0.290196, 0.294118, 1 )
+[node name="Bg2" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -155.0
+margin_top = -157.0
+margin_right = 1105.0
+margin_bottom = 843.0
 texture = ExtResource( 3 )
-expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -36,59 +38,30 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
-margin_right = 984.0
-margin_bottom = 500.0
-alignment = 1
+[node name="Description" type="Label" parent="."]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 491.0
+margin_top = 519.0
+margin_right = 973.0
+margin_bottom = 545.0
+text = "A poetry writing game for Godot Wild Jam 40."
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
-margin_left = 91.0
-margin_right = 583.0
-margin_bottom = 500.0
-
-[node name="Title" type="Label" parent="MarginContainer/HBoxContainer/TextContainer"]
-margin_right = 492.0
-margin_bottom = 26.0
-text = "Poemster"
-align = 1
-uppercase = true
-
-[node name="Description" type="Label" parent="MarginContainer/HBoxContainer/TextContainer"]
-margin_top = 30.0
-margin_right = 492.0
-margin_bottom = 114.0
-text = "
-A poetry writing game for Godot Wild Jam 40. 
-Theme: Cozy"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Column" type="Label" parent="MarginContainer/HBoxContainer"]
-margin_left = 587.0
-margin_top = 237.0
-margin_right = 697.0
-margin_bottom = 263.0
-text = "           "
-
-[node name="ButtonContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
-margin_left = 701.0
-margin_right = 893.0
-margin_bottom = 500.0
-alignment = 1
-
-[node name="StartBtn" type="TextureButton" parent="MarginContainer/HBoxContainer/ButtonContainer"]
-margin_top = 184.0
-margin_right = 192.0
-margin_bottom = 248.0
+[node name="StartBtn" type="TextureButton" parent="."]
+margin_left = 740.0
+margin_top = 293.0
+margin_right = 932.0
+margin_bottom = 357.0
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 4 )
 texture_hover = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/ButtonContainer/StartBtn"]
+[node name="Label" type="Label" parent="StartBtn"]
 self_modulate = Color( 0, 0, 0, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -100,15 +73,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Credits" type="TextureButton" parent="MarginContainer/HBoxContainer/ButtonContainer"]
-margin_top = 252.0
-margin_right = 192.0
-margin_bottom = 316.0
+[node name="Credits" type="TextureButton" parent="."]
+margin_left = 740.0
+margin_top = 403.0
+margin_right = 932.0
+margin_bottom = 467.0
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 4 )
 texture_hover = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/ButtonContainer/Credits"]
+[node name="Label2" type="Label" parent="Credits"]
 self_modulate = Color( 0, 0, 0, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -121,5 +98,5 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="pressed" from="MarginContainer/HBoxContainer/ButtonContainer/StartBtn" to="." method="_on_StartBtn_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/ButtonContainer/Credits" to="." method="_on_Credits_pressed"]
+[connection signal="pressed" from="StartBtn" to="." method="_on_StartBtn_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_Credits_pressed"]
