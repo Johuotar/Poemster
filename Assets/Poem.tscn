@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Poem.gd" type="Script" id=1]
 [ext_resource path="res://gfx/ui/whitePanel.png" type="Texture" id=2]
@@ -10,6 +10,9 @@
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.882353, 0.882353, 0.882353, 1 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 600, 400 )
 
 [node name="Poem" type="Control"]
 theme = ExtResource( 3 )
@@ -71,6 +74,17 @@ caret_blink = true
 caret_moving_by_right_click = false
 __meta__ = {
 "_edit_use_anchors_": false
+}
+
+[node name="Area2D" type="Area2D" parent="TextEdit"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextEdit/Area2D"]
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
 }
 
 [node name="Warnings" type="Label" parent="."]
@@ -158,5 +172,6 @@ __meta__ = {
 [node name="Audio" type="AudioStreamPlayer" parent="."]
 
 [connection signal="text_changed" from="TextEdit" to="." method="_on_TextEdit_text_changed"]
+[connection signal="mouse_entered" from="TextEdit/Area2D" to="." method="_on_Area2D_mouse_entered"]
 [connection signal="pressed" from="Submit" to="." method="_on_Submit_pressed"]
 [connection signal="pressed" from="Rip" to="." method="_on_Rip_pressed"]

@@ -173,3 +173,9 @@ func _on_Rip_pressed():
 	text_edit.text = ""
 	info.text = "Type something!"
 	_generate_rules()
+
+
+func _on_Area2D_mouse_entered():
+	if $TextEdit.is_visible():
+		print("TextEdit is visible and mouse has entered it. call grab_focus()")
+		$TextEdit.grab_focus()
